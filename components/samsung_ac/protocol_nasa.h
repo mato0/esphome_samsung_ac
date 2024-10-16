@@ -69,7 +69,7 @@ namespace esphome
 
         enum class MessageNumber : uint16_t
         {
-            Undefiend = 0,
+            Undefined = 0,
             ENUM_in_operation_power = 0x4000,
             ENUM_in_operation_mode = 0x4001,
             ENUM_in_fan_mode = 0x4006, // Did not exists in xml...only in Remocon.dll code

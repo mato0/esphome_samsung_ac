@@ -473,7 +473,7 @@ async def to_code(config):
                                          conf,
                                          min_value=conf[CONF_debug_number_MIN], 
                                          max_value=conf[CONF_debug_number_MAX], 
-                                         step=1)
+                                         step=0.5)
             cg.add(var_dn.setup(conf[CONF_debug_number_SOURCE]))
 
     await cg.register_component(var, config)
