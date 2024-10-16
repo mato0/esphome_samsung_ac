@@ -123,7 +123,7 @@ namespace esphome
 
         struct MessageSet
         {
-            MessageNumber messageNumber = MessageNumber::Undefiend;
+            MessageNumber messageNumber = MessageNumber::Undefined;
             MessageSetType type = Enum;
             union
             {
