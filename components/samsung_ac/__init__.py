@@ -7,7 +7,7 @@ from esphome.core import (
     Lambda
 )
 
-CODEOWNERS = ["matthias882", "lanwin"]
+CODEOWNERS = ["matthias882", "lanwin", "matoo"]
 DEPENDENCIES = ["uart"]
 AUTO_LOAD = ["sensor", "switch", "select", "number", "climate"]
 MULTI_CONF = False
@@ -20,8 +20,7 @@ Samsung_AC = samsung_ac.class_(
 )
 Samsung_AC_Device = samsung_ac.class_("Samsung_AC_Device")
 Samsung_AC_Switch = samsung_ac.class_("Samsung_AC_Switch", switch.Switch)
-Samsung_AC_Mode_Select = samsung_ac.class_(
-    "Samsung_AC_Mode_Select", select.Select)
+Samsung_AC_Mode_Select = samsung_ac.class_("Samsung_AC_Mode_Select", select.Select)
 Samsung_AC_Number = samsung_ac.class_("Samsung_AC_Number", number.Number)
 Samsung_AC_Climate = samsung_ac.class_("Samsung_AC_Climate", climate.Climate)
 Samsung_AC_CustClim = samsung_ac.class_("Samsung_AC_CustClim", climate.Climate)
@@ -382,7 +381,7 @@ async def to_code(config):
             num = await number.new_number(conf,
                                           min_value=16.0,
                                           max_value=30.0,
-                                          step=1.0)
+                                          step=0.5)
             cg.add(var_dev.set_target_temperature_number(num))
 
         if CONF_DEVICE_MODE in device:
